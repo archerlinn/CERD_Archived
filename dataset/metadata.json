@@ -56,33 +56,53 @@
             "fields": [
               "sequence_id",
               "timestamp",
-              "hand_position_x",
-              "hand_position_y",
-              "hand_position_z",
-              "hand_rotation_x",
-              "hand_rotation_y",
-              "hand_rotation_z",
-              "hand_grasp_state",
-              "object_position_x",
-              "object_position_y",
-              "object_position_z",
-              "object_rotation_x",
-              "object_rotation_y",
-              "object_rotation_z",
-              "camera_position_x",
-              "camera_position_y",
-              "camera_position_z",
-              "camera_orientation_x",
-              "camera_orientation_y",
-              "camera_orientation_z",
-              "camera_orientation_w",
-              "world_position_x",
-              "world_position_y",
-              "world_position_z",
-              "world_orientation_x",
-              "world_orientation_y",
-              "world_orientation_z",
-              "world_orientation_w"
+              "hand_position_x", HaMeR, DynHaMR
+              "hand_position_y", HaMeR, DynHaMR
+              "hand_position_z", HaMeR, DynHaMR
+              "hand_rotation_x", HaMeR, DynHaMR
+              "hand_rotation_y", HaMeR, DynHaMR
+              "hand_rotation_z", HaMeR, DynHaMR
+              "hand_grasp_state", HaMeR, DynHaMR compute algorithm with 3D object depth (GroundedSAM2, ZED Depth)
+              "object1_position_x", GroundedSAM2, ZED Depth
+              "object1_position_y", GroundedSAM2, ZED Depth
+              "object1_position_z", GroundedSAM2, ZED Depth
+              "object1_rotation_x", GroundedSAM2, ZED Depth
+              "object1_rotation_y", GroundedSAM2, ZED Depth
+              "object1_rotation_z", GroundedSAM2, ZED Depth
+              "object2_position_x", GroundedSAM2, ZED Depth
+              "object2_position_y", GroundedSAM2, ZED Depth
+              "object2_position_z", GroundedSAM2, ZED Depth
+              "object2_rotation_x", GroundedSAM2, ZED Depth
+              "object2_rotation_y", GroundedSAM2, ZED Depth
+              "object2_rotation_z", GroundedSAM2, ZED Depth
+              "camera_position_x", ZED Position Tracking
+              "camera_position_y", ZED Position Tracking
+              "camera_position_z", ZED Position Tracking
+              "camera_orientation_x", ZED Position Tracking -> need to compute rotation matrix to measure world position
+              "camera_orientation_y", ZED Position Tracking
+              "camera_orientation_z", ZED Position Tracking
+              "camera_orientation_w", ZED Position Tracking
+              "world_hand_position_x", world_position = camera_position + R * hand_position
+              "world_hand_position_y",
+              "world_hand_position_z",
+              "world_hand_orientation_x", Convert Camera Quaternion to Rotation Matrix -> Convert Hand/Object Rotation to a Rotation Matrix -> Compute the World Rotation -> Convert Back to Quaternion
+              "world_hand_orientation_y",
+              "world_hand_orientation_z",
+              "world_hand_orientation_w",
+              "world_object1_position_x", world_position = camera_position + R * object1_position
+              "world_object1_position_y",
+              "world_object1_position_z", 
+              "world_object1_orientation_x", Convert Camera Quaternion to Rotation Matrix -> Convert Hand/Object Rotation to a Rotation Matrix -> Compute the World Rotation -> Convert Back to Quaternion
+              "world_object1_orientation_y",
+              "world_object1_orientation_z",
+              "world_object1_orientation_w"
+              "world_object2_position_x", world_position = camera_position + R * object2_position
+              "world_object2_position_y",
+              "world_object2_position_z",
+              "world_object2_orientation_x", Convert Camera Quaternion to Rotation Matrix -> Convert Hand/Object Rotation to a Rotation Matrix -> Compute the World Rotation -> Convert Back to Quaternion
+              "world_object2_orientation_y",
+              "world_object2_orientation_z",
+              "world_object2_orientation_w"
             ]
           },
           "calibration.json": {
