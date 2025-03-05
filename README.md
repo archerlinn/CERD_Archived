@@ -1,4 +1,6 @@
-# CERD_Model (work in progress)
+# CERD_Model (archived repo)
+All recent work has moved to this new repository: https://github.com/archerlinn/CERD_Model
+
 Collect real world first-person perspective dataset designed for learning-based robotics manipulation at a low cost through computer vision model
 
 ## Overview
